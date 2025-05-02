@@ -18,9 +18,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./Presentation/Components/*"],
+      "@presentation/*": ["Presentation/*"],
+      "@model/*": ["./Model/*"],
+      "@assets/*": ["./Utils/Assets/*"],
+      "@logic/*": ["./Logic/*"],
+      "@store/*": ["./Store/*"],
+    }
   },
   "include": [
-    "src"
+    "src", "**/*.ts", "**/*.tsx"
   ]
 }

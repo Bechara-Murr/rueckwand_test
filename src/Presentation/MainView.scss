@@ -1,0 +1,164 @@
+.main__view {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .material__picker__container {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 75%;
+        margin: 0px auto;
+
+        .material__display__container {
+            width: 60%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #dddddd;
+            height: fit-content;
+
+            .image__container {
+                position: relative;
+                height: max-content;
+                .circle {
+                    position: absolute;
+                    border-radius: 50%;
+                    background-color: rgba(0, 0, 0, 0.329);
+                    border: 2px solid #ff0000;
+                    cursor: grab;
+                }
+                img {
+                    width: 100% !important;
+                    object-fit: cover !important;
+                    aspect-ratio: 2 / 1;
+                    display: block;
+                }
+            }
+        }
+
+        .material__options__container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 60%;
+            padding: 20px 0px;
+            border-radius: 10px;
+            background-color: #fff;
+
+            .circle__positions__container {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+
+                button {
+                    width: calc(100% - 30px);
+                    margin: 0px auto;
+                    padding: 15px;
+                    border-radius: 8px;
+                    font-size: 1em;
+                    font-weight: 600;
+                    cursor: pointer;
+                    border: none;
+                    color: #fff;
+
+                    &.add__new__button {
+                        background-color: rgb(0, 86, 86);
+                    }
+
+                    &.submit__button {
+                        background-color: rgb(49, 196, 0);
+                    }
+
+                    &:active {
+                        transform: scale(0.99);
+                    }
+
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                    }
+                }
+
+                .circle__positions__inputs__container {
+                    max-height: 400px;
+                    overflow-y: auto;
+
+                    .circle__position__picker {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 5px 15px;
+
+                        .coordinate__input__container {
+                            display: flex;
+                            flex-direction: column;
+                            width: 48%;
+                            gap: 5px;
+
+                            label {
+                                font-size: 0.8em;
+                                text-align: start;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                            }
+
+                            input {
+                                border-radius: 8px;
+                                padding: 10px 5px;
+                                font-size: 1.1em;
+                                border: 2px solid rgb(0, 86, 86);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .material__picker__container {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                margin: 0px auto;
+                padding: 0px 15px;
+                div {
+                    transition: all 750ms ease;
+                }
+
+                .material__card {
+                    width: 100%;
+                    background-color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    justify-content: space-between;
+                    padding: 10px;
+                    border-radius: 8px;
+                    box-shadow: 0px 0px 5px 3px #a8a8a8;
+
+                    &.active {
+                        box-shadow: 0px 0px 5px 3px #18b700;
+                    }
+
+                    img {
+                        aspect-ratio: 1/1;
+                        width: 80px;
+                        object-fit: fill;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
