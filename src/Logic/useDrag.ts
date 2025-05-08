@@ -60,13 +60,16 @@ export const useDrag = ({
         else if (mouseY < top + measurementsContext.minXYPositions[1])
           mouseY = top + measurementsContext.minXYPositions[1] + circle_radius;
       } else {
-        if (mouseY > top + height - measurementsContext.minXYPositions[1])
+        if (
+          mouseY >
+          top + height - measurementsContext.minXYPositions[1] - circle_radius
+        ) {
           mouseY =
             top +
             height -
             measurementsContext.minXYPositions[1] -
             circle_radius;
-        else if (mouseY < top) mouseY = top + circle_radius;
+        } else if (mouseY < top) mouseY = top + circle_radius;
       }
 
       let isColliding = false;
@@ -81,6 +84,7 @@ export const useDrag = ({
             slabCenterX,
             slabCenterY
           );
+
           if (dist < circle_diameter + 2) isColliding = true;
         }
       });
